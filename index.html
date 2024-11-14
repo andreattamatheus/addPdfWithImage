@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+    <script>
+        const { jsPDF } = require("jspdf"); // will automatically load the node version
+
+        const doc = new jsPDF();
+        const image = new Image();
+
+        image.src = "images/ass_1.png";
+        doc.addImage(image, "png", 0, 0);
+        doc.save("a4.pdf");
+    </script>
+
+</body>
+
+</html>
