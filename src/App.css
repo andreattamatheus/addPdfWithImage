@@ -1,0 +1,194 @@
+* {
+  box-sizing: border-box;
+}
+
+.app {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #1f2430;
+}
+
+header h1 {
+  margin-bottom: 0.25rem;
+}
+
+header p {
+  color: #5b6472;
+  margin-top: 0;
+}
+
+.panel {
+  background: #fff;
+  border: 1px solid #e3e6ec;
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  margin-top: 1.25rem;
+}
+
+.panel h2 {
+  margin-top: 0;
+  font-size: 1.05rem;
+}
+
+.hint {
+  color: #5b6472;
+  font-size: 0.9rem;
+}
+
+.dropzone {
+  display: block;
+  border: 1.5px dashed #b9c0cc;
+  border-radius: 8px;
+  padding: 1.25rem;
+  text-align: center;
+  cursor: pointer;
+  color: #5b6472;
+}
+
+.dropzone input {
+  display: none;
+}
+
+.stamp-list {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.stamp-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  border: 1px solid #eceff3;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+}
+
+.stamp-thumb {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  background: #f5f6f8;
+  border-radius: 4px;
+}
+
+.stamp-name {
+  font-size: 0.85rem;
+  flex: 1 1 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.stamp-row label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75rem;
+  color: #5b6472;
+  gap: 0.15rem;
+}
+
+.stamp-row select,
+.stamp-row input[type="number"] {
+  font-size: 0.85rem;
+  padding: 0.2rem 0.35rem;
+  width: 4.5rem;
+}
+
+.stamp-row select {
+  width: auto;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #c0392b;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.stamp-canvas-placeholder {
+  border: 1.5px dashed #b9c0cc;
+  border-radius: 8px;
+  padding: 3rem 1rem;
+  text-align: center;
+  color: #5b6472;
+}
+
+.stamp-canvas {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  border: 1px solid #e3e6ec;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.stamp-canvas canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.stamp-handle {
+  position: absolute;
+  cursor: grab;
+  border: 1px dashed #4f7cff;
+  touch-action: none;
+  user-select: none;
+}
+
+.stamp-handle:active {
+  cursor: grabbing;
+}
+
+.primary-btn {
+  background: #2f5cf0;
+  color: #fff;
+  border: none;
+  padding: 0.65rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.primary-btn:disabled {
+  background: #b9c0cc;
+  cursor: not-allowed;
+}
+
+.progress-bar {
+  position: relative;
+  margin-top: 1rem;
+  height: 20px;
+  background: #eceff3;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #2f5cf0;
+  transition: width 0.2s ease;
+}
+
+.progress-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: #1f2430;
+}
+
+.success {
+  color: #1a7f37;
+  font-weight: 500;
+}
