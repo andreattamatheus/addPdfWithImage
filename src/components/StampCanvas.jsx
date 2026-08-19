@@ -67,7 +67,7 @@ export default function StampCanvas({ pdfFile, stamps, onChange }) {
   }
 
   if (!pdfFile) {
-    return <div className="stamp-canvas-placeholder">Upload a PDF to position your stamps</div>
+    return <div className="stamp-canvas-placeholder">Envie um PDF para posicionar seus carimbos</div>
   }
 
   return (

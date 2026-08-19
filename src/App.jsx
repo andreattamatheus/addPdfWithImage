@@ -82,12 +82,12 @@ function App() {
   return (
     <div className="app">
       <header>
-        <h1>Stamp PDFs</h1>
-        <p>Drop your images onto a PDF, position them once, and apply the stamp to every file in the batch — all in your browser, nothing uploaded anywhere.</p>
+        <h1>Carimbar PDFs</h1>
+        <p>Solte suas imagens sobre um PDF, posicione uma vez e aplique o carimbo em todos os arquivos do lote — tudo no seu navegador, nada é enviado para lugar nenhum.</p>
       </header>
 
       <section className="panel">
-        <h2>1. Add your PDFs</h2>
+        <h2>1. Adicione seus PDFs</h2>
         <label className="dropzone">
           <input
             type="file"
@@ -95,12 +95,12 @@ function App() {
             multiple
             onChange={(e) => setPdfFiles(Array.from(e.target.files))}
           />
-          {pdfFiles.length === 0 ? 'Click to choose one or more PDFs' : `${pdfCountLabel} selected`}
+          {pdfFiles.length === 0 ? 'Clique para escolher um ou mais PDFs' : `${pdfCountLabel} selecionado(s)`}
         </label>
       </section>
 
       <section className="panel">
-        <h2>2. Add stamp images</h2>
+        <h2>2. Adicione as imagens do carimbo</h2>
         <label className="dropzone">
           <input
             type="file"
@@ -108,7 +108,7 @@ function App() {
             multiple
             onChange={(e) => addStampImages(e.target.files)}
           />
-          Click to choose PNG/JPG images
+          Clique para escolher imagens PNG/JPG
         </label>
 
         {stamps.length > 0 && (
@@ -119,19 +119,19 @@ function App() {
                 <span className="stamp-name">{stamp.name}</span>
 
                 <label>
-                  Apply to
+                  Aplicar em
                   <select
                     value={stamp.target}
                     onChange={(e) => updateStamp(stamp.id, { target: e.target.value })}
                   >
-                    <option value="all">every page</option>
-                    <option value="first">first page</option>
-                    <option value="last">last page</option>
+                    <option value="all">todas as páginas</option>
+                    <option value="first">primeira página</option>
+                    <option value="last">última página</option>
                   </select>
                 </label>
 
                 <label>
-                  Size %
+                  Tamanho %
                   <input
                     type="number"
                     min="1"
@@ -145,7 +145,7 @@ function App() {
                 </label>
 
                 <button type="button" onClick={() => removeStamp(stamp.id)} className="remove-btn">
-                  Remove
+                  Remover
                 </button>
               </li>
             ))}
@@ -154,15 +154,15 @@ function App() {
       </section>
 
       <section className="panel">
-        <h2>3. Position the stamps</h2>
-        <p className="hint">Drag each image on the preview below. Position is saved as a percentage, so it applies correctly to every PDF in the batch, even if their page sizes differ.</p>
+        <h2>3. Posicione os carimbos</h2>
+        <p className="hint">Arraste cada imagem sobre a prévia abaixo. A posição é salva como porcentagem, então ela se aplica corretamente a todos os PDFs do lote, mesmo que o tamanho das páginas seja diferente.</p>
         <StampCanvas pdfFile={referencePdf} stamps={stamps} onChange={updateStamp} />
       </section>
 
       <section className="panel">
-        <h2>4. Generate</h2>
+        <h2>4. Gerar</h2>
         <button type="button" className="primary-btn" disabled={!canProcess} onClick={processAll}>
-          {status === 'processing' ? 'Processing…' : `Stamp ${pdfCountLabel || 'PDFs'}`}
+          {status === 'processing' ? 'Processando…' : `Carimbar ${pdfCountLabel || 'PDFs'}`}
         </button>
 
         {status === 'processing' && (
@@ -172,7 +172,7 @@ function App() {
           </div>
         )}
 
-        {status === 'done' && <p className="success">Done! Your download should have started.</p>}
+        {status === 'done' && <p className="success">Pronto! O download deve ter começado.</p>}
       </section>
     </div>
   )

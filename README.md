@@ -36,7 +36,7 @@ Build for production:
 npm run build
 ```
 
-The output in `dist/` is fully static and can be hosted anywhere (Vercel, Netlify, GitHub Pages, etc.).
+The output in `dist/` is fully static and can be hosted anywhere (Vercel, Netlify, GitHub Pages, etc.). `vite.config.js`'s `base` is set to `/tools/stamp-pdfs/` to match its current deployment at [tools.regradesign.com](https://tools.regradesign.com/tools/stamp-pdfs/) — change it (or pass `--base`) if you're hosting it at a different path.
 
 ## Contact
 
